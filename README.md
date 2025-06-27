@@ -3,6 +3,10 @@
 Repositório do Bootcamp Avanti de Machine Learning
 Uma ML (Machine Learning) para análise de imagens de trânsito. Projeto com objetivo de identificar sinalizações verticais e horizontais de trânsito, veículos com imagem de captura.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 016e8ffc226aeecfd412e8d152589c8842213e37
 ## Sumário
 
 - [Descrição](#descrição)
@@ -26,14 +30,25 @@ O projeto **Ml Traffic** tem como foco desenvolvimento de um pipel completo para
 - **Inferência e Deploy:** Treinamento para inferência de imagens estaticas e analise
 
 1. **clone o repositório:**
+<<<<<<< HEAD
    No terminal, execute:
 
+=======
+No terminal, execute:
+>>>>>>> 016e8ffc226aeecfd412e8d152589c8842213e37
 ```bash
 git clone https://github.com/liapsps/avanti-bootcamp-ML.git
 ```
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 016e8ffc226aeecfd412e8d152589c8842213e37
 ```
 cd avanti-bootcamp-ML
 
 
+<<<<<<< HEAD
 ```
+=======
+>>>>>>> 016e8ffc226aeecfd412e8d152589c8842213e37
