@@ -23,3 +23,18 @@ if missing:
         print(f" - {m}")
 else:
     print("Todas as imagens do XML existem na pasta de imagens.")
+
+extensions_xml = set()
+for name in xml_images:
+    base_name, ext = os.path.splitext(name)
+    extensions_xml.add(ext.lower())
+
+print(f'Extensões encontradas nas imagens no XML: {extensions_xml}')
+
+extensions_folder = set()
+for archive in os.listdir(images_folder):
+    if os.path.isfile(os.path.join(images_folder, archive)):
+        base_name, ext = os.path.splitext(archive)
+        extensions_folder.add(ext.lower())
+
+print(f'Extensões encontradas na pasta de imagens: {extensions_folder}')
