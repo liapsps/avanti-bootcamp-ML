@@ -1,3 +1,4 @@
+import hashlib
 import os
 import xml.etree.ElementTree as ET
 
@@ -38,3 +39,31 @@ for archive in os.listdir(images_folder):
         extensions_folder.add(ext.lower())
 
 print(f'Extensões encontradas na pasta de imagens: {extensions_folder}')
+
+# Verificando se há imagens duplicadas:
+
+def file_hash(path):
+    hasher = hashlib.md5()
+    with open(path, 'rb') as f:
+        buf = f.read()
+        hasher.update(buf)
+    return hasher.hexdigest()
+
+hashes = {}
+duplicates_by_content = []
+
+for filename in os.listdir(images_folder):
+    path = os.path.join(images_folder, filename)
+    if os.path.isfile(path):
+        h = file_hash(path)
+        if h in hashes:
+            duplicates_by_content.append((filename, hashes[h]))
+        else:
+            hashes[h] = filename
+
+if duplicates_by_content:
+    print(f"{len(duplicates_by_content)} imagem(ns) duplicadas por conteúdo:")
+    for dup, original in duplicates_by_content:
+        print(f" - {dup} é duplicada de {original}")
+else:
+    print("Não há imagens duplicadas por conteúdo.")
